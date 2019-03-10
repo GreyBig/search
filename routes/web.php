@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// 搜索页面
+Route::get('/', 'HomeController@home')->name('home');
+
+
+Route::get('/search', 'SearchController@search')->name('search');
+
+Route::post('/search', 'SearchController@store')->name('store');
